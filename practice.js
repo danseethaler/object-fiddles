@@ -3,9 +3,13 @@
 
 //Create an object called me. Give it a key of name with the value being your name, and another key of age with the value being your age. Then alert your name using dot notation.
 
-  //Code here
+//Code here
 
+var me = {
+	danseethaler: 27
+}
 
+console.log(me.danseethaler);
 
 
 //NEXT PROBLEM
@@ -15,23 +19,35 @@
 
 //Make a 'favoriteThings' object that contains the following keys: band, food, person, book, movie, holiday. Have the values to those keys be your favorite thing in that category.
 
-  //Code here
+//Code here
+
+var favoriteThings = {
+	band: "No idea",
+	food: "Pizza",
+	person: "My wife of course",
+	book: "Blink",
+	movie: "The Count of Monte Christo",
+	holiday: "Christmas"
+}
 
 
 //After you've made your object, add another key named 'car' with the value being your favorite car and then another key named 'brand' with the value being your favorite brand.
 
-  //Code here
+//Code here
+
+favoriteThings.car = "Jeep";
+favoriteThings.brand = "Cool Brand";
 
 
 //Now change the food key in your favoriteThings object to be 'Lettuce' and change the book key in your favoriteThings object to be '50 Shades of Gray'.
 
-  //Code here
+//Code here
 
-
+favoriteThings.food = "Lettuce";
+favoriteThings.book = "Not a chance";
 
 
 //NEXT PROBLEM
-
 
 
 /*Create an empty Object called backPack. Now, create a variable called 'item'
@@ -42,17 +58,26 @@ Set the value of that key to 'chapstick'.
 Using dot notation, add another key (or property) to your backPack object
 that is named color, with the value being the color of your backpack. */
 
-  //Code here
+//Code here
+
+var backPack = {};
+
+var item = 'firstPocket';
+
+backPack[item] = 'chapstick';
+backPack.color = 'black';
 
 //After you do the above, alert your entire backPack object.
 
-  //Code here
+//Code here
+
+console.log(backPack);
 
 /*You probably noticed that it just alerted [object Object].
 Alerting to see the data in your Object doesn't work so well.
 Instead, console.log your whole backPack object and then check out the console. */
 
-  //Code here
+//Code here
 
 
 
@@ -64,12 +89,27 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create another 'me' object with the following properties name, age, height, gender, married, eyeColor, hairColor. Fill those properties in with the appropriate values.
 
-  //Code Here
+//Code Here
+
+var me = {
+    name: "Dan Seethaler",
+    age: 27,
+    height: "6'5",
+    gender: "Male",
+    married: true,
+    eyeColor: "brown",
+    hairColor: "brown"
+}
 
 //Now, loop through your object and alert every value. *Tyler --> 24 --> 6'0 --> Male, etc etc
 
-  //Code Here
+//Code Here
 
+for (var property in me) {
+    if (me.hasOwnProperty(property)) {
+        console.log(me[property]);
+    }
+}
 
 
 
@@ -80,13 +120,26 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create an Object called 'album' with 5 keys named different song titles that you make up, with the values being the length of each song.
 
-  //Code Here
+//Code Here
+
+var album = {
+    song2: 2,
+    song3: 3,
+    song4: 4,
+    song5: 5,
+    song6: 6,
+    song6: 6
+}
 
 //Now, loop through your album object alerting every song title individually.
 
-  //Code Here
+//Code Here
 
-
+for (var property in album) {
+    if (album.hasOwnProperty(property)) {
+        console.log(property, album[property]);
+    }
+}
 
 
 //NEXT PROBLEM
@@ -96,36 +149,56 @@ Instead, console.log your whole backPack object and then check out the console. 
 
 //Create an object called states that has 5 US states as properties with the values being their population (doesn't have to be accurate).
 
-  //Code Here
+//Code Here
+
+var states = {
+    Utah: 2,
+    New_York: 12,
+    Penn: 15,
+    Cali: 50,
+    Oregon: 1
+}
 
 //Now, loop through your states object and if the states population is greater than 30K, alert that state.
 
-  //Code Here
+//Code Here
 
-
+for (var property in states) {
+    if (states.hasOwnProperty(property)) {
+        if (states[property] > 30) {
+            console.log(property);
+        }
+    }
+}
 
 
 //NEXT PROBLEM
 
 
-
-
 var user = {
-    name: 'Tyler McGinnis',
-    email: null,
-    pwHash: 'U+Ldlngx2BYQk',
-    birthday: undefined,
-    username: 'tylermcginnis33',
-    age: 0
-}
-/*Above you're given a user object. Loop through the user object checking to make sure
-that each value is truthy. If it's not truthy, remove it from the object. */
+		name: 'Tyler McGinnis',
+		email: null,
+		pwHash: 'U+Ldlngx2BYQk',
+		birthday: undefined,
+		username: 'tylermcginnis33',
+		age: 0
+	}
+	/*Above you're given a user object. Loop through the user object checking to make sure
+	that each value is truthy. If it's not truthy, remove it from the object. */
 
-  //Code Here
+//Code Here
+
+for (var property in user) {
+    if (user.hasOwnProperty(property)) {
+        if (!user[property]) {
+            delete user[property];
+        }
+    }
+}
 
 //Once you get your truthy Object, Change the remaining values in the object to be specific to you (name: 'your name', username: 'your username'), rather than my information.
 
-  //Code Here
+//Code Here
 
 
 
@@ -136,24 +209,24 @@ that each value is truthy. If it's not truthy, remove it from the object. */
 
 
 var user = {
-        name: 'Tyler McGinnis',
-        age: 24,
-        pwHash: 'U+Ldlngx2BYQk',
-        email: 'tylermcginnis33@gmail.com',
-        birthday: '05/02/1990',
-        username: 'tylermcginnis33',
-        sayName: function(){
-            alert('Email is : ' + this.email);
-        }
+	name: 'Tyler McGinnis',
+	age: 24,
+	pwHash: 'U+Ldlngx2BYQk',
+	email: 'tylermcginnis33@gmail.com',
+	birthday: '05/02/1990',
+	username: 'tylermcginnis33',
+	sayName: function () {
+		alert('Email is : ' + this.email);
+	}
 };
 //Let's say I, the user, decided to change my name and email address to the following
 // name -> 'Tyler S. McGinnis', email -> 'tyler.mcginnis@devmounta.in'. Make that change.
 
-  //Code Here
+//Code Here
 
 //Now call the sayName method that's on the user object which will alert the users email
 
-  //Code Here
+//Code Here
 
 
 
@@ -165,17 +238,17 @@ var user = {
 
 //Create an empty object called methodCollection.
 
-  //Code Here
+//Code Here
 
 /*Now add two methods (functions that are properties on objects) to your methodCollection
 object. One called 'alertHello' which alerts 'hello' and another method called logHello
  which logs 'hello' to the console. */
 
-  //Code Here
+//Code Here
 
 //Now call your alertHello and logHello methods.
 
-  //Code Here
+//Code Here
 
 
 
@@ -185,7 +258,7 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 
 // Create a function called MakePerson which takes in name, birthday, ssn as its parameters and returns a new object with all of the information that you passed in.
 
-  //Code Here
+//Code Here
 
 
 
@@ -195,10 +268,10 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
 
 // Create a function called MakeCard which takes in all the data it needs to make a Credit Card object and returns that object so that whenever you invoke MakeCard, you get a brand new credit card.
 
-  //Code Here
-  
-  
-  
+//Code Here
+
+
+
 //NEXT PROBLEM
 
 
@@ -208,6 +281,4 @@ object. One called 'alertHello' which alerts 'hello' and another method called l
    Have bindCard merge the two parameters together into a new object which contains all the properties from the person as well as the creditcard.
 */
 
-  //Code Here
-
-
+//Code Here
